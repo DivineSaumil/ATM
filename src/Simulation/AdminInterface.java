@@ -8,7 +8,7 @@ public class AdminInterface {
     private static final int DELETE_RECORD = 2;
     private static final int UPDATE_RECORD = 3;
 
-    public static void main(String[] args) { 
+    public void Menu() { 
         try { 
             // Create a new AccountDatabase object 
             Database db = new Database("jdbc:mysql://localhost:3306/mydb", "root", "root");
