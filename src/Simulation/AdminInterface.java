@@ -24,7 +24,7 @@ public class AdminInterface {
                         System.out.println("Enter The Account Number-");
                         int account_no = sc.nextInt();
                         System.out.println("Enter The Name of holder-");
-                        String name = sc.nextLine();
+                        String name = sc.next();
                         System.out.println("Enter The Balance in account-");
                         Float balance = sc.nextFloat();
                         System.out.println("Enter The Account PIN-");
