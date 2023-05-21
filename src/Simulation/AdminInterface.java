@@ -98,12 +98,16 @@ public class AdminInterface {
                 int account_no = sc.nextInt();
                 System.out.print("Enter the PIN: ");
                 int pin = sc.nextInt();
+                float balance=0;String name="";String info="";
                 ResultSet rs = db.getRecord(account_no, pin);
+                if (rs.next()) {
+                    
+                
                 account_no = rs.getInt("account_no");
-                String name = rs.getString("name");
-                float balance = rs.getFloat("balance");
+                name = rs.getString("name");
+                balance = rs.getFloat("balance");
                 pin = rs.getInt("pin");
-                String info = rs.getString("info");
+                info = rs.getString("info");}
                 System.out.println("Account details: ");
                 System.out.println("Account no: " + account_no);
                 System.out.println("Name: " + name);
@@ -111,13 +115,16 @@ public class AdminInterface {
                 System.out.println("PIN: " + pin);
                 System.out.println("Info: " + info);
                 System.out.print("Enter the Updated Name of holder: ");
-                name = sc.nextLine();
+                name = sc.next();
+                System.out.println();
                 System.out.print("Enter the Updated Balance in account: ");
                 balance = sc.nextFloat();
+                System.out.println();
                 System.out.print("Enter the Updated Account PIN: ");
                 pin = sc.nextInt();
+                System.out.println();
                 System.out.print("Enter the Updated Information about the account: ");
-                info = sc.nextLine();
+                info = sc.next();
                 db.updateRecord(account_no, name, balance, pin, info);
                 System.out.println("RECORD UPDATED SUCCESSFULLY!!");
                 System.out.println("If you want to update another record, enter 1");
